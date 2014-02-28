@@ -55,8 +55,6 @@ ICallWrapper *g_pGetDefintionIndex = NULL;
 ICallWrapper *g_pGetItemDefintionByName = NULL;
 ICallWrapper *g_pGetLoadoutSlot = NULL;
 IBinTools *g_pBinTools = NULL;
-int g_iLoadoutSlots[65];
-
 class CEconItemView;
 
 void RemoveGiveNamedItemHook(int client);
@@ -272,7 +270,7 @@ int GetLoadoutSlot(void *pItemDef, int iTeam)
 		if(!g_pGameConf->GetMemSig("GetLoadoutSlot", &addr) || !addr)
 		{
 			smutils->LogError(myself, "Failed to GetLoadoutSlot location");
-			return NULL;
+			return 0;
 		}
 
 		PassInfo pass[1];
@@ -297,7 +295,7 @@ int GetLoadoutSlot(void *pItemDef, int iTeam)
 	int slot = 0;
 	g_pGetLoadoutSlot->Execute(vstk, &slot);
 
-	return (int)slot;
+	return slot;
 }
 
 CBaseEntity *GiveNamedItem(const char *szItem, int iSubType, CEconItemView *pView, bool removeIfNotCarried)
@@ -374,16 +372,6 @@ CEconItemView *GetEconItemView(void *pItemDef, CBaseEntity *pEnt, int iLoadoutSl
 	CEconItemView *pView = NULL;
 	g_pGetItemInLoadout->Execute(vstk, &pView);
 
-	if(pView)
-	{
-		for(int i = 4; i <= 120; i+=4)
-		{
-			if(*(int*)((intptr_t)pView + i) == 226)
-			{
-				META_CONPRINTF("The value 226 is at %i\n",i);
-			}
-		}
-	}
 	return pView;
 }
 void RemoveGiveNamedItemHook(int client)
