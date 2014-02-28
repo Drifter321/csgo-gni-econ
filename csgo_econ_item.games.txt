@@ -1,0 +1,56 @@
+"Games"
+{
+	"csgo"
+	{
+		"Signatures"
+		{
+			"GetItemSchema"
+			{
+				"library"	"server"
+				"windows"	"\xA1\x2A\x2A\x2A\x2A\x85\xC0\x75\x2A\x56\x68\xE8\x04\x00\x00\xE8\x2A\x2A\x2A\x2A\x8B\xF0\x83\xC4\x04\x85\xF6\x74\x2A\x8D\x4E\x04\xC7\x06\x2A\x2A\x2A\x2A\xE8\x2A\x2A\x2A\x2A\xC7\x06\x2A\x2A\x2A\x2A\x8D\x46\x04"
+				"linux"		"@_Z13GetItemSchemav"
+				"mac"		"@_Z13GetItemSchemav"
+			}
+			"GetLoadoutSlot"
+			{
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x8B\x45\x08\x8D\x50\xFF\x83\xFA\x02"
+				"linux"		"@_ZNK24CCStrike15ItemDefinition14GetLoadoutSlotEi"
+				"mac"		"@_ZNK24CCStrike15ItemDefinition14GetLoadoutSlotEi"
+			}
+		}
+		"Offsets"
+		{
+			"GetDefintionIndex"
+			{
+				"windows"		"0"
+				"linux"			"0"
+				"mac"			"0"
+			}
+			"GetItemDefintionByName"
+			{
+				"windows"		"42"
+				"linux"			"41"
+				"mac"			"41"
+			}
+			"GiveNamedItem"
+			{
+				"windows"		"443"
+				"linux"			"444"
+				"mac"			"444"
+			}
+			"InventoryOffset"
+			{
+				"windows"		"9536"
+				"linux"			"9560"
+				"mac"			"9556"
+			}
+			"GetItemInLoadout"
+			{
+				"windows"		"8"
+				"linux"			"9"
+				"mac"			"9"
+			}
+		}
+	}
+}
