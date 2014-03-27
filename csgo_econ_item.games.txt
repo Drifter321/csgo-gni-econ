@@ -41,8 +41,8 @@
 			}
 			"InventoryOffset"
 			{
-				"windows"		"9536"
-				"linux"			"9560"
+				"windows"		"9544"
+				"linux"			"9564"
 				"mac"			"9556"
 			}
 			"GetItemInLoadout"
