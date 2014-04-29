@@ -35,9 +35,9 @@
 			}
 			"GiveNamedItem"
 			{
-				"windows"		"443"
-				"linux"			"444"
-				"mac"			"444"
+				"windows"		"444"
+				"linux"			"445"
+				"mac"			"445"
 			}
 			"InventoryOffset"
 			{
