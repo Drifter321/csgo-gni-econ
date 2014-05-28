@@ -7,7 +7,7 @@
  * Return Plugin_Continue to create a econitem view based on the players loadout, anything else to bypass it and use the original GiveNameItem paramaters.
  *
  * @param client		Client the item is being given to.
- * @param iDefIndex		The defintion index of the item.
+ * @param iDefIndex		The definition index of the item.
  * @param iTeam			Clients team
  * @param iLoadoutSlot	Loadout slot for the given item. If -1 the item is not for the clients team. (ak47 for ct's for example)
  * @param szItem		Item string passed to GiveNameItem
