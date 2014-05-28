@@ -40,8 +40,8 @@
 /* Basic information exposed publicly */
 #define SMEXT_CONF_NAME			"CS:GO GNI Econ"
 #define SMEXT_CONF_DESCRIPTION	"Creates EconItemView for items."
-#define SMEXT_CONF_VERSION		"1.0.0"
-#define SMEXT_CONF_AUTHOR		"AlliedModders"
+#define SMEXT_CONF_VERSION		"1.0.1"
+#define SMEXT_CONF_AUTHOR		"Dr!fter"
 #define SMEXT_CONF_URL			"http://www.sourcemod.net/"
 #define SMEXT_CONF_LOGTAG		"GNI"
 #define SMEXT_CONF_LICENSE		"GPL"
@@ -59,7 +59,7 @@
 #define SMEXT_CONF_METAMOD		
 
 /** Enable interfaces you want to use here by uncommenting lines */
-//#define SMEXT_ENABLE_FORWARDSYS
+#define SMEXT_ENABLE_FORWARDSYS
 //#define SMEXT_ENABLE_HANDLESYS
 #define SMEXT_ENABLE_PLAYERHELPERS
 //#define SMEXT_ENABLE_DBMANAGER

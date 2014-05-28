@@ -54,6 +54,7 @@ ICallWrapper *g_pGetItemInLoadout = NULL;
 ICallWrapper *g_pGetDefintionIndex = NULL;
 ICallWrapper *g_pGetItemDefintionByName = NULL;
 ICallWrapper *g_pGetLoadoutSlot = NULL;
+IForward *g_pOnGiveNamedItem = NULL;
 IBinTools *g_pBinTools = NULL;
 class CEconItemView;
 
@@ -101,6 +102,7 @@ bool CSGONamedItemEcon::SDK_OnLoad(char *error, size_t maxlength, bool late)
 	{
 		g_iHookId[i] = 0;
 	}
+	g_pOnGiveNamedItem = forwards->CreateForward("GNIEcon_OnGiveNamedItem", ET_Hook, 5, NULL, Param_Cell, Param_Cell, Param_Cell, Param_Cell, Param_String); 
 	return true;
 }
 void CSGONamedItemEcon::SDK_OnUnload()
@@ -314,8 +316,20 @@ CBaseEntity *GiveNamedItem(const char *szItem, int iSubType, CEconItemView *pVie
 				if(iTeam == 2 || iTeam == 3)
 				{
 					int iLoadoutSlot = GetLoadoutSlot(pItemDef, iTeam);
-					CEconItemView *pNewView = GetEconItemView(pItemDef, pEnt, iLoadoutSlot, iTeam);
-					RETURN_META_VALUE_MNEWPARAMS(MRES_HANDLED, NULL, GiveNamedItemHook, (szItem, iSubType, pNewView, removeIfNotCarried));
+
+					cell_t res = PLUGIN_CONTINUE;
+					g_pOnGiveNamedItem->PushCell(gamehelpers->EntityToBCompatRef(pEnt));
+					g_pOnGiveNamedItem->PushCell(id);
+					g_pOnGiveNamedItem->PushCell(iTeam);
+					g_pOnGiveNamedItem->PushCell(iLoadoutSlot);
+					g_pOnGiveNamedItem->PushString(szItem);
+					g_pOnGiveNamedItem->Execute(&res);
+
+					if(res == PLUGIN_CONTINUE)
+					{
+						CEconItemView *pNewView = GetEconItemView(pItemDef, pEnt, iLoadoutSlot, iTeam);
+						RETURN_META_VALUE_MNEWPARAMS(MRES_HANDLED, NULL, GiveNamedItemHook, (szItem, iSubType, pNewView, removeIfNotCarried));
+					}
 				}
 			}
 		}
