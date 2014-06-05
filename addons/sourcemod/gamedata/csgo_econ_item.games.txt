@@ -18,6 +18,13 @@
 				"linux"		"@_ZNK24CCStrike15ItemDefinition14GetLoadoutSlotEi"
 				"mac"		"@_ZNK24CCStrike15ItemDefinition14GetLoadoutSlotEi"
 			}
+			"HandleCommand_Buy_Internal"//Wildcard first 6 bytes
+			{
+				"library"		"server"
+				"windows"		"\x2A\x2A\x2A\x2A\x2A\x2A\x81\xEC\x2A\x2A\x2A\x2A\x83\x3D\x2A\x2A\x2A\x2A\x00\x53\x56\x57\x8B\xF9"
+				"linux"			"@_ZN9CCSPlayer26HandleCommand_Buy_InternalEPKcib"
+				"mac"			"@_ZN9CCSPlayer26HandleCommand_Buy_InternalEPKcib"
+			}
 		}
 		"Offsets"
 		{
@@ -39,11 +46,13 @@
 				"linux"			"445"
 				"mac"			"445"
 			}
+			//Offset into HandleCommand_Buy_Internal
+			//Same as sourcemod cstrike extension.
 			"InventoryOffset"
 			{
-				"windows"		"9488"
-				"linux"			"9508"
-				"mac"			"9504"
+				"windows"	"285"
+				"linux"		"87"
+				"mac"		"109"
 			}
 			"GetItemInLoadout"
 			{

@@ -40,7 +40,7 @@
 /* Basic information exposed publicly */
 #define SMEXT_CONF_NAME			"CS:GO GNI Econ"
 #define SMEXT_CONF_DESCRIPTION	"Creates EconItemView for items."
-#define SMEXT_CONF_VERSION		"1.0.1"
+#define SMEXT_CONF_VERSION		"1.0.2"
 #define SMEXT_CONF_AUTHOR		"Dr!fter"
 #define SMEXT_CONF_URL			"http://www.sourcemod.net/"
 #define SMEXT_CONF_LOGTAG		"GNI"

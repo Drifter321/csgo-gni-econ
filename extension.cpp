@@ -77,17 +77,27 @@ bool CSGONamedItemEcon::SDK_OnLoad(char *error, size_t maxlength, bool late)
 	}
 
 	int offset = -1;
+	void *addr;
+	int byteOffset = -1;
 
 	if(!g_pGameConf->GetOffset("GiveNamedItem", &offset))
 	{
 		snprintf(error, maxlength, "Failed to get GiveNamedItem offset");
 		return false;
 	}
-	if(!g_pGameConf->GetOffset("InventoryOffset", &g_iInventoryOffset))
+	if(!g_pGameConf->GetOffset("InventoryOffset", &byteOffset))
 	{
 		snprintf(error, maxlength, "Failed to get InventoryOffset offset");
 		return false;
 	}
+	if(!g_pGameConf->GetMemSig("HandleCommand_Buy_Internal", &addr) || !addr)
+	{
+		snprintf(error, maxlength, "Failed to get HandleCommand_Buy_Internal address");
+		return false;
+	}
+
+	g_iInventoryOffset = *(int *)((intptr_t)addr + byteOffset);
+
 	if(!g_pGameConf->GetOffset("GetItemInLoadout", &g_iGetItemInLoadout))
 	{
 		snprintf(error, maxlength, "Failed to get GetItemInLoadout offset");
