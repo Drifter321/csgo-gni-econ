@@ -199,7 +199,12 @@ void *GetItemSchema()
 
 void *GetItemDefinitionByName(const char *szItem)
 {
+#ifdef WIN32
+	void *temp = GetItemSchema();
+	void *pSchema = (void *)((intptr_t)temp + 4);
+#else
 	void *pSchema = GetItemSchema();
+#endif
 
 	if(!pSchema)
 		return 0;
