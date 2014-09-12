@@ -51,7 +51,7 @@
 			"InventoryOffset"
 			{
 				"windows"	"285"
-				"linux"		"87"
+				"linux"		"32"
 				"mac"		"109"
 			}
 			"GetItemInLoadout"
