@@ -42,9 +42,9 @@
 			}
 			"GiveNamedItem"
 			{
-				"windows"		"446"
-				"linux"			"447"
-				"mac"			"447"
+				"windows"		"448"
+				"linux"			"449"
+				"mac"			"449"
 			}
 			//Offset into HandleCommand_Buy_Internal
 			//Same as sourcemod cstrike extension.
