@@ -8,22 +8,19 @@
 			{
 				"library"	"server"
 				"windows"	"\xA1\x2A\x2A\x2A\x2A\x85\xC0\x75\x2A\xA1\x2A\x2A\x2A\x2A\x56\x68\x2A\x2A\x00\x00\x8B"
-				"linux"		"@_Z13GetItemSchemav"
-				"mac"		"@_Z13GetItemSchemav"
+				"linux"		"\x55\x89\xE5\x83\xEC\x08\xE8\x2A\x2A\x2A\x2A\xC9\x83\xC0\x04\xC3"
 			}
 			"GetLoadoutSlot"
 			{
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x8B\x45\x08\x83\xF8\x04\x7C\x2A\x8B\x81\x2A\x2A\x2A\x2A\x5D\xC2"
-				"linux"		"@_ZNK24CCStrike15ItemDefinition14GetLoadoutSlotEi"
-				"mac"		"@_ZNK24CCStrike15ItemDefinition14GetLoadoutSlotEi"
+				"linux"		"\x55\x89\xE5\x8B\x45\x0C\x8B\x55\x08\x8D\x48\xFF"
 			}
 			"HandleCommand_Buy_Internal"//Wildcard first 6 bytes
 			{
 				"library"		"server"
 				"windows"		"\x2A\x2A\x2A\x2A\x2A\xF8\x81\xEC\x7C\x01\x00\x00\x53\x56\x57"
-				"linux"			"@_ZN9CCSPlayer26HandleCommand_Buy_InternalEPKcib"
-				"mac"			"@_ZN9CCSPlayer26HandleCommand_Buy_InternalEPKcib"
+				"linux"			"\x2A\x2A\x2A\x2A\x2A\x2A\x81\xEC\x9C\x01\x00\x00\x8B\x5D\x08\xC7\x44\x24\x04\x00\x00\x00\x00"
 			}
 		}
 		"Offsets"
